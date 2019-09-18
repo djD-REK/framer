@@ -7,7 +7,7 @@ import { useCycle as useCycleFramerMotion } from "framer-motion"
 import "./styles.css"
 
 function App() {
-  const DEFAULT_TOGGLE_WIDTH = 95
+  const DEFAULT_TOGGLE_WIDTH = 80
 
   // Various React Hooks for constants to allow fullscreen mode for presentation
   const [TOGGLE_WIDTH, setTOGGLE_WIDTH] = useState(DEFAULT_TOGGLE_WIDTH)
@@ -20,7 +20,9 @@ function App() {
   const [FULLSCREEN, setFULLSCREEN] = useState(false)
 
   const toggleFULLSCREEN = () => {
-    let toggle_width = !FULLSCREEN ? DEFAULT_TOGGLE_WIDTH * 2 : DEFAULT_TOGGLE_WIDTH
+    let toggle_width = !FULLSCREEN
+      ? DEFAULT_TOGGLE_WIDTH * 2
+      : DEFAULT_TOGGLE_WIDTH
     setFULLSCREEN(!FULLSCREEN)
     setTOGGLE_WIDTH(toggle_width)
     setTOGGLE_HEIGHT(toggle_width / 2)
